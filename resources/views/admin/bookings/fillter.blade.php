@@ -25,17 +25,17 @@
             <input type="number" value="1" name="number_person" class="form-control">
           </div> --}}
 
-          <div class="form-group">
-            <label for="exampleSelectBorderWidth2">Number Person</label>
-            <select name="number_person" value="number_person" class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2">
-              @php
-                  $max = 21;
-              @endphp
-              @for ($i = 0; $i < $max; $i++)
-              <option  name="number_person"> {{$i}} </option>
-             @endfor
-            </select>
-          </div>
+        <div class="form-group">
+        <label for="exampleSelectBorderWidth2">Number Person</label>
+        <select name="number_person" value="number_person" class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2">
+        @php
+        $max = 21;
+        @endphp
+        @for ($i = 0; $i < $max; $i++)
+        <option  name="number_person"> {{$i}} </option>
+        @endfor
+        </select>
+        </div>
 
 
         <div class="form-group clearfix">
