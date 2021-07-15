@@ -2,28 +2,24 @@
 
 @section('content')
 
-<div class="col-lg-12">
+<div class="col-lg-6">
     <!-- general form elements -->
     <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Booking Table</h3>
-        @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{session()->get('success')}}
-        </div>
-        @endif
 
-      </div>
-      <!-- /.card-header -->
+
+<div class="card-header">
+<h3 class="card-title">Booking Table</h3>
+@if (session()->has('success'))
+<div class="alert alert-success">
+{{session()->get('success')}}
+</div>
+@endif
+</div>
+
       <!-- form start -->
       <form>
 
         <div class="card-body">
-
-          {{-- <div class="form-group">
-            <label for="exampleInputPassword1">Number Person</label>
-            <input type="number" value="1" name="number_person" class="form-control">
-          </div> --}}
 
         <div class="form-group">
         <label for="exampleSelectBorderWidth2">Number Person</label>
@@ -73,6 +69,9 @@
         </form>
     </div>
     <!-- /.card -->
+</div>
+
+<div class="col-lg-6">
     @if($tables !== null)
     <hr />
     @if($tables->count())
@@ -84,7 +83,7 @@
                         <th>Type</th>
                         <th>From</th>
                         <th>To</th>
-                        {{-- <th>&nbsp;</th> --}}
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,6 +106,9 @@
         <p class="text-center">No Tables !</p>
     @endif
 @endif
+
+</div>
+
 
 
 @endsection

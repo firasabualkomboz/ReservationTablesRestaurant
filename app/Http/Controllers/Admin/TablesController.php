@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TableRequest;
 use App\Models\Table;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TablesController extends Controller
@@ -40,6 +41,7 @@ class TablesController extends Controller
         $table->type                = $request->input('type');
         $table->start_at             = $request->input('start_at');
         $table->end_at               = $request->input('end_at');
+
 
         $table->save();
 

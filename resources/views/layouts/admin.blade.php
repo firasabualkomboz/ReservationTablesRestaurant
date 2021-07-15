@@ -256,12 +256,12 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-7">
+          {{-- <section class="col-lg-12"> --}}
 
             @yield('content')
 
 
-            </div>
+            {{-- </div> --}}
             <!--/.direct-chat -->
 
           </section>
