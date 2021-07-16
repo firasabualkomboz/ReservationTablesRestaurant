@@ -8,7 +8,7 @@
 </div>
 @endif
 
-<div class="col-lg-6">
+<div class="col-lg-12">
 
     <section class="content">
         <div class="container-fluid">
@@ -49,9 +49,9 @@
             <td><span class="btn btn-sm btn-outline-success">{{$table->type}}</span>
 
             {{-- <td>{{$table->start_at}}</td> --}}
-            <td><span class="btn btn-outline-primary">{!! date('d-m-y' , strtotime($table->start_at)) !!}</span>
+            <td><span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->start_at)) !!}</span>
             {{-- <td>{{$table->end_at}}</td> --}}
-            <td>{!! date('Y-m-d' , strtotime($table->end_at)) !!}</td>
+            <td> <span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->end_at)) !!}</span></td>
             <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->start_at)) !!}</span></td>
             <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->end_at)) !!}</span></td>
 

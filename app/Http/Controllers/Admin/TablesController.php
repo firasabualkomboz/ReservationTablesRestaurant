@@ -29,10 +29,16 @@ class TablesController extends Controller
 
 
         $validated = $request->validate([
-            'number_table'          =>'required|int',
+            'number_table'          =>'required|int|max:50',
             'number_person'         =>'required|int',
             'type'                  =>'required|in:inside,outside',
         ]);
+
+
+        $customMessages = [
+            'max'    => 'رقم الطاولة يجب ان يكوم أقل من 50.',
+        ];
+
 
 
         $table = new Table;
@@ -78,4 +84,7 @@ class TablesController extends Controller
     {
         //
     }
+
+
+
 }

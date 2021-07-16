@@ -25,8 +25,12 @@ class DashboardController extends Controller
 
             'tables' => $tables,
             'bookings' => $bookings,
+            
 
         ]);
+
+        return Table::with('table')->all();
+
     }
 
     /**

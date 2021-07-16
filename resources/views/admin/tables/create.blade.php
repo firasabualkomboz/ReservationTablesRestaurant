@@ -7,11 +7,14 @@
     <div class="card card-primary">
       <div class="card-header">
         <h3 class="card-title">Add new Table</h3>
-        @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{session()->get('success')}}
+
+        <div class="mt-3">
+            @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{session()->get('success')}}
+            </div>
+            @endif
         </div>
-        @endif
 
       </div>
       <!-- /.card-header -->
