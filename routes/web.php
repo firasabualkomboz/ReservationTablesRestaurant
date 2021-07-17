@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\DashboardController;
 // Route::get('/','App\Http\Controllers\BookingController@index')->name('booking');
 // Route::post('/','App\Http\Controllers\BookingController@store')->name('booking.store');
 
-Route::post('admin/table/store','App\Http\Controllers\Admin\TablesController@store')->name('table.store');
 
 
 
@@ -31,10 +30,19 @@ function(){
     Route::get('/',[DashboardController::class, 'index'])->name('index');
     Route::get('/table',[TablesController::class , 'index'])->name('tables');
     Route::get('/table/create',[TablesController::class ,'create'])->name('tables.create');
+    Route::post('/table/store',[TablesController::class ,'store'])->name('tables.store');
 
 
+});
 
+route::group(['prefix' => '/',
+// 'as'    => '',
+],function(){
 
+//ROUTE Reservation
+Route::get('/',[BookingsController::class, 'index'])->name('index');
+Route::get('/table',[TablesController::class , 'index'])->name('tables');
+Route::get('/table/create',[TablesController::class ,'create'])->name('tables.create');
 
 
 });

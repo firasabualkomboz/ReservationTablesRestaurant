@@ -23,21 +23,21 @@ class TablesController extends Controller
         return view('admin.tables.create');
     }
 
-    public function store(Request $request)
+    public function store(TableRequest $request)
 
     {
 
 
-        $validated = $request->validate([
-            'number_table'          =>'required|int|max:50',
-            'number_person'         =>'required|int',
-            'type'                  =>'required|in:inside,outside',
-        ]);
+        // $validated = $request->validate([
+        //     'number_table'          =>'required|int|max:50',
+        //     'number_person'         =>'required|int',
+        //     'type'                  =>'required|in:inside,outside',
+        // ]);
 
 
-        $customMessages = [
-            'max'    => 'رقم الطاولة يجب ان يكوم أقل من 50.',
-        ];
+        // $customMessages = [
+        //     'max'    => 'رقم الطاولة يجب ان يكوم أقل من 50.',
+        // ];
 
 
 
@@ -45,14 +45,14 @@ class TablesController extends Controller
         $table->number_table        = $request->input('number_table');
         $table->number_person       = $request->input('number_person');
         $table->type                = $request->input('type');
-        $table->start_at             = $request->input('start_at');
-        $table->end_at               = $request->input('end_at');
+        $table->start_at            = $request->input('start_at');
+        $table->end_at              = $request->input('end_at');
 
 
         $table->save();
 
 
-        return redirect()->route('admin.tables')->with('success','Added Successfuly');
+        return redirect()->route('admin.tables')->with('success','تم إضافة الطاولة بنجاح');
 
 
 

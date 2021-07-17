@@ -2,60 +2,60 @@
 
 @section('content')
 
-<div class="col-lg-12">
-    <!-- general form elements -->
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Add new Table</h3>
+<div class="col-lg-6">
+<div class="card card-primary">
+<div class="card-header">
+<h3 class="card-title">إضافة طاولة جديدة</h3>
+{{-- check error --}}
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $message )
+<li>{{$message}}</li>
+@endforeach
+</ul>
+</div>
+@endif
+{{-- end check --}}
+<form method="post" action="{{route('admin.tables.store')}}">
+@csrf
 
-        <div class="mt-3">
-            @if (session()->has('success'))
-            <div class="alert alert-success">
-                {{session()->get('success')}}
-            </div>
-            @endif
-        </div>
+<div class="card-body">
 
-      </div>
-      <!-- /.card-header -->
-      <!-- form start -->
-      <form method="post" action="{{route('table.store')}}">
-        @csrf
+<div class="form-group">
+<label >رقم الطاولة</label>
+<input type="number" name="number_table" class="form-control">
+</div>
 
-        <div class="card-body">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Number Table </label>
-            <input type="number" name="number_table" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Number Person</label>
-            <input type="number" name="number_person" class="form-control">
-          </div>
+<div class="form-group">
+<label >عدد الأشخاص</label>
+<input type="number" name="number_person" class="form-control">
+</div>
 
 
-          <div class="form-group clearfix">
-            <label for="exampleInputEmail1">Type</label>
-            <br>
-            <div class="icheck-primary d-inline">
-              <input name="type" id="inside" value="inside" type="radio">
-              <label for="inside"> Inside
-              </label>
-            </div>
-            <div class="icheck-primary d-inline">
-              <input name="type" id="outside" value="outside" type="radio">
-              <label for="outside"> OutSide
-              </label>
-            </div>
-          </div>
+<div class="form-group clearfix">
+<label for="exampleInputEmail1">نوع الحجز</label>
+<br>
+<div class="icheck-primary d-inline">
+<input name="type" id="inside" value="inside" type="radio">
+<label for="inside"> داخلي
+</label>
+</div>
+<div class="icheck-primary d-inline">
+<input name="type" id="outside" value="outside" type="radio">
+<label for="outside"> خارجي
+</label>
+</div>
+</div>
 
-          <div class="form-group">
-            <label for="exampleInputPassword1">start at</label>
-            <input type="datetime-local" name="start_at" class="form-control" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">end at</label>
-            <input type="datetime-local" name="end_at" class="form-control">
-          </div>
+<div class="form-group">
+<label for="exampleInputPassword1">من</label>
+<input type="datetime-local" name="start_at" class="form-control" >
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">إلى</label>
+<input type="datetime-local" name="end_at" class="form-control">
+</div>
 
           {{-- <div class="form-group">
             <label for="exampleInputPassword1">Form TO | Date & Time</label>
@@ -66,9 +66,11 @@
         <!-- /.card-body -->
 
         <div class="card-footer">
-          <button type="submit" class="btn btn-success">Add</button>
+          <button type="submit" class="btn btn-primary">إضافة</button>
         </div>
       </form>
+    </div>
+
     </div>
     <!-- /.card -->
 
@@ -116,7 +118,5 @@
 
                                     <button type="submit" class="btn btn-success">اضافة</button>
                                     </form> --}}
-
-
 
 @endsection

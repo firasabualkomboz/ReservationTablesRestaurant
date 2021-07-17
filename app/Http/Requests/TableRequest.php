@@ -26,14 +26,22 @@ class TableRequest extends FormRequest
         return [
 
 
-            'number_table'          =>'required|int',
+            'number_table'          =>'required|int|max:50',
             'number_person'         =>'required|int',
             'type'                  =>'required|in:inside,outside',
-            'start_date'            =>'required',
-            'end_date'              =>'required',
-            'start_time'            =>'required',
-            'end_time'              =>'required',
+            'start_at'              =>'required',
+            'end_at'                =>'required',
         ];
+    }
+
+    public function messages()
+    {
+       return [
+
+        'required' => 'هذا الحقل مطلوب إدخاله',
+        'max' => 'هذا الحقل يجب أن يحتوى على رقم أقل من 50',
+
+       ];
     }
 
 

@@ -16,7 +16,7 @@
 <i class="mdi mdi-dots-horizontal text-gray"></i>
 </div>
 <p class="tx-12 tx-gray-500 mb-2">
-<a href=""><button class="btn btn-primary mb-3">إضافة طاولة جديدة</button></a></p>
+<a href="{{route('admin.tables.create')}}"><button class="btn btn-primary mb-3">إضافة طاولة جديدة</button></a></p>
 </div>
 <div class="card-body">
 <div class="table-responsive">
