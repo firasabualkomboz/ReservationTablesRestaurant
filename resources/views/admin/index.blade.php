@@ -8,11 +8,14 @@
 </div>
 @endif
 
+
+
+
 <div class="col-lg-12">
 
     <section class="content">
         <div class="container-fluid">
-        <a href="{{route('table.create')}}">
+        <a href="">
         <button class="btn btn-primary mt-3 mb-3">Add new Table</button>
         </a>
 

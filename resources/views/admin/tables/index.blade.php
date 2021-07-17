@@ -8,53 +8,46 @@
 </div>
 @endif
 
-<section class="content">
-<div class="container-fluid">
-<a href="{{route('table.create')}}">
-<button class="btn btn-primary mt-3 mb-3">Add new Table</button>
-</a>
-
-<div class="row">
-
-<div class="col-12">
+<div class="col-xl-12">
 <div class="card">
-
-<div class="card-header">
-<h3 class="card-title">All Tables in Resturent</h3>
+<div class="card-header pb-0">
+<div class="d-flex justify-content-between">
+<h4 class="card-title mg-b-0 mb-3">الطاولات الموجودة في المطعم</h4>
+<i class="mdi mdi-dots-horizontal text-gray"></i>
 </div>
-<!-- /.card-header -->
+<p class="tx-12 tx-gray-500 mb-2">
+<a href=""><button class="btn btn-primary mb-3">إضافة طاولة جديدة</button></a></p>
+</div>
 <div class="card-body">
-<table id="example2" class="table table-bordered table-hover">
+<div class="table-responsive">
+<table class="table mg-b-0 text-md-nowrap">
 <thead>
 <tr>
-    <th> ID </th>
-    <th> Num Person </th>
-    <th>TYPE BOOKING</th>
-    <th>FROM </th>
-    <th>TO </th>
+
+<th>رقم الطاولة</th>
+<th >عدد الأشخاص</th>
+<th >نوع الحجز</th>
+<th>من</th>
+<th>إلى</th>
 </tr>
 </thead>
 <tbody>
 
-    @foreach ($tables as $table)
+@foreach ($tables as $table)
 <tr>
-    <td>{{$table->number_table}}</td>
-    <td>{{$table->number_person}}</td>
-    <td>{{$table->type}}</td>
-    <td>{{$table->start_at}}</td>
-    <td>{{$table->end_at}}</td>
+<td>{{$table->number_table}}</td>
+<td>{{$table->number_person}}</td>
+<td>{{$table->type}}</td>
+<td>{{$table->start_at}}</td>
+<td>{{$table->end_at}}</td>
+{{-- <td><span class="btn btn-sm btn-outline-danger">حذف</span></td> --}}
 </tr>
-
 @endforeach
-</tbody>
 
+</tbody>
 </table>
 </div>
 </div>
 </div>
 </div>
-</div>
-</section>
-
-
 @endsection
