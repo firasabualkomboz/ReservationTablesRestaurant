@@ -50,17 +50,18 @@
 
 <div class="form-group">
 <label for="exampleInputPassword1">من</label>
-<input type="datetime-local" name="start_at" class="form-control" >
+<input max="2018" type="datetime-local" name="start_at" class="form-control" >
 </div>
 <div class="form-group">
 <label for="exampleInputPassword1">إلى</label>
 <input type="datetime-local" name="end_at" class="form-control">
 </div>
 
-          {{-- <div class="form-group">
-            <label for="exampleInputPassword1">Form TO | Date & Time</label>
-            <input type="text" name="datetimes" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div> --}}
+
+{{-- <div class="form-group">
+<label for="exampleInputPassword1">Form TO | Date & Time</label>
+<input type="text" name="datetimes" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div> --}}
 
         </div>
         <!-- /.card-body -->

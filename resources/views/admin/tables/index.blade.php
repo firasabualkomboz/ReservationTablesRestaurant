@@ -38,9 +38,9 @@
 <td>{{$table->number_table}}</td>
 <td>{{$table->number_person}}</td>
 <td>{{$table->type}}</td>
-<td>{{$table->start_at}}</td>
-<td>{{$table->end_at}}</td>
-{{-- <td><span class="btn btn-sm btn-outline-danger">حذف</span></td> --}}
+<td>{!! date('d-m-Y - H'  , strtotime($table->start_at)) !!}</td>
+<td>{!! date('d-m-Y - H' , strtotime($table->end_at)) !!}</td>
+
 </tr>
 @endforeach
 

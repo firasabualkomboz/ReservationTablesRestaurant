@@ -50,13 +50,13 @@
             <td>{{$table->number_table}}</td>
             <td>{{$table->number_person}}</td>
             <td><span class="btn btn-sm btn-outline-success">{{$table->type}}</span>
-
             {{-- <td>{{$table->start_at}}</td> --}}
             <td><span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->start_at)) !!}</span>
             {{-- <td>{{$table->end_at}}</td> --}}
             <td> <span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->end_at)) !!}</span></td>
             <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->start_at)) !!}</span></td>
             <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->end_at)) !!}</span></td>
+
 
         </tr>
 
