@@ -2,6 +2,8 @@
 
 @section('content')
 
+@section('title')اضافة طاولة جديدة@endsection
+
 <div class="col-lg-6">
 <div class="card card-primary">
 <div class="card-header">
@@ -10,7 +12,7 @@
 @if ($errors->any())
 <div class="alert alert-danger">
 <ul>
-@foreach ($errors->all() as $message )
+@foreach ($errors->all() as $message)
 <li>{{$message}}</li>
 @endforeach
 </ul>
@@ -24,7 +26,7 @@
 
 <div class="form-group">
 <label >رقم الطاولة</label>
-<input type="number" name="number_table" class="form-control">
+<input type="number" name="number_table" placeholder="رقم الطاولة من 1 إلى 50" class="form-control">
 </div>
 
 <div class="form-group">

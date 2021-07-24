@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TableRequest;
 use App\Models\Table;
 use Carbon\Carbon;
+use Facade\Ignition\Tabs\Tab;
 use Illuminate\Http\Request;
 
 class TablesController extends Controller
@@ -13,7 +14,7 @@ class TablesController extends Controller
 
     public function index()
     {
-        $tables = Table::all();
+        $tables = Table::paginate(5);
 
         return view('admin.tables.index',compact('tables'));
     }
@@ -74,16 +75,20 @@ class TablesController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
-    }
+
+        $table = Table::findOrFail($id);
+
+        $table->delete();
+
+        return redirect()->route('admin.tables')
+        ->with('success','تم حذف الطاولة بنجاح');
+
+
+
+    } //end destroy
 
 
 

@@ -26,11 +26,11 @@ class TableRequest extends FormRequest
         return [
 
 
-            'number_table'          =>'required|int|max:50',
-            'number_person'         =>'required|int',
+            'number_table'          =>'required|int|max:50|unique:tables,number_table',
+            'number_person'         =>'required|int|max:50|unique:tables,number_person',
             'type'                  =>'required|in:inside,outside',
-            'start_at'              =>'required',
-            'end_at'                =>'required',
+            'start_at'              =>'required|',
+            'end_at'                =>'required|after:start_at',
         ];
     }
 
@@ -39,6 +39,7 @@ class TableRequest extends FormRequest
        return [
 
         'required' => 'هذا الحقل مطلوب إدخاله',
+        'unique' => 'رقم الطاولة محجوز',
         'max' => 'هذا الحقل يجب أن يحتوى على رقم أقل من 50',
 
        ];

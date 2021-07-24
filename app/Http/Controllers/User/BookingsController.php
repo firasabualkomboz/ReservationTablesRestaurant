@@ -47,6 +47,11 @@ class BookingsController extends Controller
 
     }
 
+    public function king_table(Request $request)
+    {
+        $kings = Table::where('number_person' , '>=' , '12')->take(5)->get();
+        return view('user.index',compact('kings'));
+    }
 
     public function create()
     {
@@ -84,7 +89,7 @@ class BookingsController extends Controller
         $book->save();
 
 
-        return redirect()->route('admin.index')->with('success','Added Successfuly');
+        return view('user.index')->with('success','تم حجز الطاولة بنجاح');
 
 
         // dd($request->all());
@@ -98,6 +103,23 @@ class BookingsController extends Controller
 
         $tables = Table::all();
         return view('user.bookings.choice',compact('tables','table'));
+    }
+
+
+    public function get_all()
+    {
+        $bookings = Booking::paginate(5);
+        return view('admin.bookings.index',compact('bookings'));
+    }
+
+    public function destroy_booking($id)
+    {
+        $booking = Booking::findOrFail($id);
+
+        $booking->delete();
+
+        return redirect()->route('admin.booking.all')
+        ->with('success','تم حذف الحجز بنجاح');
     }
 
     public function show($id)

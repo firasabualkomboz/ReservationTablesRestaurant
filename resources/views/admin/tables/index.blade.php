@@ -29,6 +29,7 @@
 <th >نوع الحجز</th>
 <th>من</th>
 <th>إلى</th>
+<th>اكشن</th>
 </tr>
 </thead>
 <tbody>
@@ -40,12 +41,21 @@
 <td>{{$table->type}}</td>
 <td>{!! date('d-m-Y - H'  , strtotime($table->start_at)) !!}</td>
 <td>{!! date('d-m-Y - H' , strtotime($table->end_at)) !!}</td>
+<td>
+<form action="{{route('admin.tables.destroy',[$table->id])}}" method="post">
+@csrf
+@method('delete')
+<button type="submit" class="btn btn-sm btn-outline-danger">حذف</button>
+</form>
+</td>
 
 </tr>
 @endforeach
 
 </tbody>
 </table>
+{{$tables->links()}}
+
 </div>
 </div>
 </div>

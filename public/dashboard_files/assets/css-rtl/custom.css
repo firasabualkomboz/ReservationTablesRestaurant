@@ -1,0 +1,19 @@
+.king-table .body{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+.king-table .body ol {
+    padding: 0;
+}
+.king-table .body ol li {
+display: inline;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.king-table .body ol li span{
+    float:left;
+    background-color: #fbbc0b;
+    border-radius: 2px;
+    padding: 5px;
+}

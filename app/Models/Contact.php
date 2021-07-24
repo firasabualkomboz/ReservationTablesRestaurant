@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Contact extends Model
 {
     use HasFactory;
 
     protected $fillable = [
 
         'name',
-        'phone',
-        'table_id',
+        'email',
+        'mobile_number',
+        'subject',
+        'message',
     ];
-
-    public function table()
-    {
-        return $this->belongsTo(Table::class,'table_id','id');
-    }
 
 }

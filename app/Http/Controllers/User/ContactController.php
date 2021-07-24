@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
-use App\Models\Booking;
-use App\Models\Table;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,19 +17,6 @@ class DashboardController extends Controller
     {
 
 
-        $tables = Table::paginate(4);
-        $bookings = Booking::with('table')->paginate(5);
-        // $bookings = Booking::paginate(4);
-
-        return view('admin.index',[
-
-            'tables' => $tables,
-            'bookings' => $bookings,
-
-        ]);
-
-        // return Table::with('table')->all();
-
     }
 
     /**
@@ -40,7 +26,8 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.contact_form');
+
     }
 
     /**
@@ -51,7 +38,28 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $contact = Contact::create([
+
+        //     'name'           => $request->post('name'),
+        //     'email'          => $request->post('email'),
+        //     'subject'        => $request->post('subject'),
+        //     'mobile_number'  => $request->post('mobile_number'),
+        //     'message'        => $request->post('message'),
+
+        // ]);
+
+        // return  response()->json($contact);
+
+
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'mobile_number' => $request->mobile_number,
+            'message' => $request->message
+          ]);
+
+          return response()->json(['success'=>'Form is successfully submitted!']);
     }
 
     /**
@@ -65,35 +73,19 @@ class DashboardController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

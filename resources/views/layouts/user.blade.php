@@ -29,6 +29,9 @@
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
+        <link href="{{URL::asset('dashboard_files/assets/css-rtl/custom.css')}}" rel="stylesheet">
+
+
 
 	</head>
 

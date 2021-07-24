@@ -8,135 +8,110 @@
 </div>
 @endif
 
+<div class="col-xl-12">
+    <div class="card">
+    <div class="card-header pb-0">
+    <div class="d-flex justify-content-between">
+    <h4 class="card-title mg-b-0 mb-3">الطاولات الموجودة في المطعم</h4>
+    <i class="mdi mdi-dots-horizontal text-gray"></i>
+    </div>
+    </div>
+    <div class="card-body">
+    <div class="table-responsive">
+    <table class="table mg-b-0 text-md-nowrap">
+    <thead>
+    <tr>
+
+    <th>رقم الطاولة</th>
+    <th >عدد الأشخاص</th>
+    <th >نوع الحجز</th>
+    <th>اكشن</th>
+
+    {{-- <th>من تاريخ</th>
+    <th>إلى تاريخ</th>
+    <th>من ساعة</th>
+    <th>إلى ساعة</th> --}}
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach ($tables as $table)
+    <tr>
+    <td>{{$table->number_table}}</td>
+    <td>{{$table->number_person}}</td>
+    <td> <span class="btn btn-sm btn-outline-success"> {{$table->type}} </span></td>
+    <td><a href="{{route('admin.tables')}}"><span class="btn btn-outline-primary">تفاصيل أكثر</span></a></td>
+
+    {{-- <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y'  , strtotime($table->start_at)) !!}</span></td>
+    <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y'  , strtotime($table->end_at)) !!}</span></td>
+    <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->start_at)) !!}</span></td>
+    <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->end_at)) !!}</span></td> --}}
+
+    </tr>
+    @endforeach
+
+    </tbody>
+    </table>
+    {{$tables->links()}}
+
+    </div>
+    </div>
+    </div>
+    </div>
 
 
-
-<div class="col-lg-12">
-
-    <section class="content">
-        <div class="container-fluid">
-        <a href="">
-        <button class="btn btn-primary mt-3 mb-3">Add new Table</button>
-        </a>
-
-        <div class="row">
-
-        <div class="col-lg-12">
+    <div class="col-xl-12">
         <div class="card">
-
-        <div class="card-header">
-        <h3 class="card-title">All Tables in Resturent</h3>
+        <div class="card-header pb-0">
+        <div class="d-flex justify-content-between">
+        <h4 class="card-title mg-b-0 mb-3">الطاولات المحجوزة</h4>
+        <i class="mdi mdi-dots-horizontal text-gray"></i>
         </div>
-        <!-- /.card-header -->
+
+        </div>
         <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover">
+        <div class="table-responsive">
+        <table class="table mg-b-0 text-md-nowrap">
         <thead>
         <tr>
-            <th> #id </th>
-            <th> Number Table </th>
-            <th> Num Person </th>
-            <th>TYPE BOOKING</th>
-            <th>FROM Date </th>
-            <th>TO Date</th>
-            <th>FROM Hour </th>
-            <th>TO Hour</th>
+
+        <th>الحجز بأسم</th>
+        <th>رقم التواصل</th>
+        <th>رقم الطاولة</th>
+        <th >عدد الأشخاص</th>
+        <th >نوع الحجز</th>
+        <th>اكشن</th>
+        {{-- <th>من تاريخ</th>
+        <th>إلى تاريخ</th>
+        <th>من ساعة</th>
+        <th>إلى ساعة</th> --}}
         </tr>
         </thead>
         <tbody>
 
-            @foreach ($tables as $table)
+        @foreach ($bookings as $booking)
         <tr>
-            <td>{{$table->id}}</td>
-            <td>{{$table->number_table}}</td>
-            <td>{{$table->number_person}}</td>
-            <td><span class="btn btn-sm btn-outline-success">{{$table->type}}</span>
-            {{-- <td>{{$table->start_at}}</td> --}}
-            <td><span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->start_at)) !!}</span>
-            {{-- <td>{{$table->end_at}}</td> --}}
-            <td> <span class="btn btn-outline-primary">{!! date('d-m-Y' , strtotime($table->end_at)) !!}</span></td>
-            <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->start_at)) !!}</span></td>
-            <td><span class="btn btn-sm btn-outline-info">{!! date('H' , strtotime($table->end_at)) !!}</span></td>
-
-
+        <td>{{$booking->name}}</td>
+        <td>{{$booking->phone}}</td>
+        <td>{{$booking->table->number_table}}</td>
+        <td>{{$booking->table->number_person}}</td>
+        <td>{{$booking->table->type}}</td>
+        <td><a href="{{route('admin.tables')}}"><span class="btn btn-outline-primary">تفاصيل أكثر</span></a></td>
+        {{-- <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->start_at)) !!}</span></td>
+        <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->end_at)) !!}</span></td>
+        <td><span class="btn btn-sm btn-outline-info">{!! date('H'  , strtotime($booking->table->start_at)) !!}</span></td>
+        <td><span class="btn btn-sm btn-outline-info">{!! date('H'  , strtotime($booking->table->end_at)) !!}</span></td> --}}
         </tr>
-
         @endforeach
+
         </tbody>
-
         </table>
+        {{$bookings->links()}}
+
         </div>
         </div>
         </div>
         </div>
-        </div>
-        </section>
-
-
-</div>
-
-<div class="col-lg-6">
-
-    <section class="content">
-        <div class="container-fluid">
-
-            <br>
-            <br><br>
-
-        <div class="row">
-
-        <div class="col-lg-12">
-        <div class="card">
-
-        <div class="card-header">
-        <h3 class="card-title">All Bookings</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th> name </th>
-            <th> phone </th>
-
-            <th> ID Table </th>
-            {{-- <th> Num Person </th>
-            <th>TYPE BOOKING</th>
-            <th>FROM </th>
-            <th>TO </th> --}}
-        </tr>
-        </thead>
-        <tbody>
-
-            @foreach ($bookings as $booking)
-        <tr>
-            <td>{{$booking->name}}</td>
-            <td>{{$booking->phone}}</td>
-            <td>{{$booking->table_id}}</td>
-
-            {{-- <td>{{$post->category->name}}</td> --}}
-
-            {{--</td>
-            <td>{{$bookings->end_at}}</td>
-            <td>{{$booking->number_table}}</td>
-            <td>{{$bookings->number_person}}</td>
-            <td>{{$bookings->type}}</td>
-            <td>{{$bookings->start_at}}</td>
-            <td>{{$bookings->end_at}}</td> --}}
-        </tr>
-
-        @endforeach
-        </tbody>
-
-        </table>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
-
-</div>
-
 
 
 
