@@ -25,9 +25,9 @@ class Table extends Model
         return $this->hasOne(Booking::class);
     }
 
-    public function Times()
+    public function time()
     {
-        return $this->hasMany(Time::class,'time_id','id');
+        return $this->belongsTo(Time::class,'time_id','id');
     }
 
     public function setDateAttribute($value)

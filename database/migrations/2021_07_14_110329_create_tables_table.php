@@ -20,7 +20,7 @@ class CreateTablesTable extends Migration
             $table->enum('type',['inside','outside']);
             $table->date('start_at');
             $table->date('end_at');
-            // $table->foreignId('time_id')->nullable()->constrained('times','id')->nullOnDelete();
+            $table->foreignId('time_id')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,9 @@ class Time extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
+
     protected $fillable = [
 
         'start_time',
@@ -16,9 +19,9 @@ class Time extends Model
 
     ];
 
-    public function table()
+    public function tables()
     {
-        return $this->belongsToMany(Table::class,'time_id','id');
+        return $this->hasMany(Table::class,'time_id','id');
     }
 
 }
