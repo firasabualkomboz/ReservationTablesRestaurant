@@ -91,11 +91,11 @@
 
         @foreach ($bookings as $booking)
         <tr>
-        <td>{{$booking->name}}</td>
-        <td>{{$booking->phone}}</td>
-        <td>{{$booking->table->number_table}}</td>
-        <td>{{$booking->table->number_person}}</td>
-        <td>{{$booking->table->type}}</td>
+        <td>{{$booking->name ?? 'NAN'}}</td>
+        <td>{{$booking->phone ?? 'NAN'}}</td>
+        <td>{{$booking->table->number_table ?? 'NAN'}}</td>
+        <td>{{$booking->table->number_person ?? 'NAN'}}</td>
+        <td>{{$booking->table->type ?? 'NAN'}}</td>
         <td><a href="{{route('admin.tables')}}"><span class="btn btn-outline-primary">تفاصيل أكثر</span></a></td>
         {{-- <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->start_at)) !!}</span></td>
         <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->end_at)) !!}</span></td>

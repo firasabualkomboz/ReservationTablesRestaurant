@@ -101,8 +101,11 @@
 <tr>
 <td class="room-name">{{ $table->number_person ?? '' }}</td>
 <td class="room-name">{{ $table->type ?? '' }}</td>
-<td>{{$table->start_at ?? ''}}</td>
-<td>{{$table->end_at ?? ''}}</td>
+{{-- <td>{{$table->start_at ?? ''}}</td> --}}
+<td>{!! date('d-m-Y'  , strtotime($table->start_at)) !!}</td>
+<td>{!! date('d-m-Y'  , strtotime($table->end_at)) !!}</td>
+
+{{-- <td>{{$table->end_at ?? ''}}</td> --}}
 {{--  {{route('booking.choice',[$table->id])}} --}}
 <td><a class="btn btn-sm btn-primary" href="{{route('booking.choice',[$table->id])}}">حجز الأن</a>
 </td>

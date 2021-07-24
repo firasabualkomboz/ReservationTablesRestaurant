@@ -24,6 +24,7 @@ class TablesController extends Controller
         return view('admin.tables.create');
     }
 
+
     public function store(TableRequest $request)
 
     {
@@ -48,7 +49,6 @@ class TablesController extends Controller
         $table->type                = $request->input('type');
         $table->start_at            = $request->input('start_at');
         $table->end_at              = $request->input('end_at');
-
 
         $table->save();
 

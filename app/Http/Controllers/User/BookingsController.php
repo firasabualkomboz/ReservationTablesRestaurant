@@ -26,19 +26,21 @@ class BookingsController extends Controller
 
         if ($request->filled(['number_person','type','start_at','end_at'])) {
 
-        $times = [
+        $dates = [
+
         Carbon::parse($request->input('start_at')),
         Carbon::parse($request->input('end_at')),
+
         ];
 
         $tables = Table::where('number_person', '<=', $request->input('number_person'))
         ->where('type' , '=' ,$request->input('type'))
-        // ->whereBetween('start_at',$times)
-        // ->orwhereBetween('end_at',$times)
-        // ->orwhere(function($query) use ($times) {
-        //     $query->where('start_at', '<', $times[0])
-        //     ->where('end_at', '>', $times[1]);
-        // })
+        ->whereBetween('start_at',$dates)
+        ->orwhereBetween('end_at',$dates)
+        ->orwhere(function($query) use ($dates) {
+            $query->where('start_at', '<', $dates[0])
+            ->where('end_at', '>', $dates[1]);
+        })
         ->get();
 
         }
