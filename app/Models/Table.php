@@ -17,14 +17,17 @@ class Table extends Model
     'type',
     'start_at',
     'end_at',
-    // 'start_time',
-    // 'end_time',
-
 ];
+
 
     public function booking ()
     {
         return $this->hasOne(Booking::class);
+    }
+
+    public function Times()
+    {
+        return $this->hasMany(Time::class,'time_id','id');
     }
 
     public function setDateAttribute($value)

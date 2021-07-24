@@ -3,6 +3,7 @@ use App\Http\Controllers\Admin\TablesController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TimesController;
 
 use App\Http\Controllers\User\BookingsController;
 use App\Http\Controllers\user\ContactController;
@@ -36,6 +37,12 @@ function(){
 
     Route::get('/booking/all', [BookingsController::class, 'get_all'])->name('booking.all');
     Route::delete('/booking/all/{id}', [BookingsController::class, 'destroy_booking'])->name('booking.destroy');
+
+
+    //ADD TIME
+    Route::get('/time/',[TimesController::class ,'index'])->name('times');
+    Route::get('/time/create',[TimesController::class ,'create'])->name('times.create');
+    Route::post('/time/store',[TimesController::class ,'store'])->name('times.store');
 
 
 });

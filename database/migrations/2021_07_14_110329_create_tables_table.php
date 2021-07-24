@@ -18,8 +18,9 @@ class CreateTablesTable extends Migration
             $table->integer('number_table');
             $table->integer('number_person');
             $table->enum('type',['inside','outside']);
-            $table->datetime('start_at');
-            $table->datetime('end_at');
+            $table->date('start_at');
+            $table->date('end_at');
+            // $table->foreignId('time_id')->nullable()->constrained('times','id')->nullOnDelete();
             $table->timestamps();
         });
     }

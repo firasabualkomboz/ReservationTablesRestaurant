@@ -24,9 +24,6 @@
 <thead>
 <tr>
 
-<th>رقم الطاولة</th>
-<th >عدد الأشخاص</th>
-<th >نوع الحجز</th>
 <th>من</th>
 <th>إلى</th>
 <th>اكشن</th>
@@ -34,27 +31,26 @@
 </thead>
 <tbody>
 
-@foreach ($tables as $table)
+@foreach ($times as $time)
 <tr>
-<td>{{$table->number_table}}</td>
-<td>{{$table->number_person}}</td>
-<td>{{$table->type}}</td>
-<td>{!! date('d-m-Y'  , strtotime($table->start_at)) !!}</td>
-<td>{!! date('d-m-Y' , strtotime($table->end_at)) !!}</td>
-<td>
+
+    <td>{{$time->start_time}}</td>
+    <td>{{$time->end_time}}</td>
+
+{{-- <td>
 <form action="{{route('admin.tables.destroy',[$table->id])}}" method="post">
 @csrf
 @method('delete')
 <button type="submit" class="btn btn-sm btn-outline-danger">حذف</button>
 </form>
-</td>
+</td> --}}
 
 </tr>
 @endforeach
 
 </tbody>
 </table>
-{{$tables->links()}}
+{{$times->links()}}
 
 </div>
 </div>

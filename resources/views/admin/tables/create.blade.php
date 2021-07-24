@@ -52,12 +52,26 @@
 
 <div class="form-group">
 <label for="exampleInputPassword1">من</label>
-<input max="2018" type="datetime-local" name="start_at" class="form-control" >
+<input max="2018" type="date" name="start_at" class="form-control" >
 </div>
 <div class="form-group">
 <label for="exampleInputPassword1">إلى</label>
-<input type="datetime-local" name="end_at" class="form-control">
+<input type="date" name="end_at" class="form-control">
 </div>
+
+
+<div class="form-group">
+<label for="">  الوقت</label>
+<select name="time_id" class="form-control">
+<option> لا يوجد وقت محدد </option>
+@foreach ($times as $time)
+<option value="{{ $time->id }}">
+{!! date('H' , strtotime($time->start_time)) !!}| {!! date('H' , strtotime($time->end_time)) !!}
+</option>
+@endforeach
+</select>
+</div>
+
 
 
 {{-- <div class="form-group">

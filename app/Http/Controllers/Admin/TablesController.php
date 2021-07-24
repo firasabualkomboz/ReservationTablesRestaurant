@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TableRequest;
 use App\Models\Table;
+use App\Models\Time;
 use Carbon\Carbon;
 use Facade\Ignition\Tabs\Tab;
 use Illuminate\Http\Request;
@@ -15,13 +16,14 @@ class TablesController extends Controller
     public function index()
     {
         $tables = Table::paginate(5);
-
-        return view('admin.tables.index',compact('tables'));
+        $times  = Time::all();
+        return view('admin.tables.index',compact('tables','times'));
     }
 
     public function create()
     {
-        return view('admin.tables.create');
+        $times = Time::all();
+        return view('admin.tables.create',compact('times'));
     }
 
 
@@ -49,6 +51,7 @@ class TablesController extends Controller
         $table->type                = $request->input('type');
         $table->start_at            = $request->input('start_at');
         $table->end_at              = $request->input('end_at');
+        $table->time_id             = $request->input('time_id');
 
         $table->save();
 
