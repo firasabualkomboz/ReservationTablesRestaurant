@@ -9,6 +9,21 @@
 		<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
         <!-- Title -->
         <title>@yield("title").</title>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="https://unpkg.com/@coreui/coreui@2.1.16/dist/css/coreui.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+
+
         <!-- Favicon -->
         <link rel="icon" href="{{URL::asset('dashboard_files/assets/img/brand/favicon.png')}}" type="image/x-icon"/>
         <!-- Icons css -->
@@ -29,7 +44,7 @@
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
-        
+
 
 
 	</head>
@@ -72,13 +87,21 @@
 
 
 <li class="slide">
-    <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> الطاولات</span><i class="angle fe fe-chevron-down"></i></a>
-    <ul class="slide-menu">
-    <li><a class="slide-item" href="{{ route('admin.tables') }}">قائمة الطاولات</a></li>
-    <li><a class="slide-item" href="{{ url('/' . $page='chart-flot') }}"> اضف 'طاولة' </a></li>
-    <li><a class="slide-item" href="{{ route('admin.times.create') }}">  اضف وقت </a></li>
-    </ul>
-    </li>
+<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> الطاولات</span><i class="angle fe fe-chevron-down"></i></a>
+<ul class="slide-menu">
+<li><a class="slide-item" href="{{ route('admin.tables') }}">قائمة الطاولات</a></li>
+<li><a class="slide-item" href="{{route('admin.tables.create')}}"> اضف طاولة </a></li>
+</ul>
+</li>
+
+<li class="slide">
+<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> الأوقات</span><i class="angle fe fe-chevron-down"></i></a>
+<ul class="slide-menu">
+<li><a class="slide-item" href="{{ route('admin.times') }}">قائمة الأوقات</a></li>
+<li><a class="slide-item" href="{{ route('admin.times.create') }}">  اضف وقت </a></li>
+</ul>
+</li>
+
 
 
 <li class="slide">
@@ -388,6 +411,108 @@
 <!-- custom js -->
 <script src="{{asset('dashboard_files/assets/js/custom.js')}}"></script><!-- Left-menu js-->
 <script src="{{asset('dashboard_files/assets/plugins/side-menu/sidemenu.js')}}"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://unpkg.com/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+  window._token = $('meta[name="csrf-token"]').attr('content')
+
+  moment.updateLocale('en', {
+    week: {dow: 1} // Monday is the first day of the week
+  })
+
+  $('.date').datetimepicker({
+    format: 'YYYY-MM-DD',
+    locale: 'en',
+    icons: {
+      up: 'fas fa-chevron-up',
+      down: 'fas fa-chevron-down',
+      previous: 'fas fa-chevron-left',
+      next: 'fas fa-chevron-right'
+    }
+  })
+
+  $('.datetime').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+    locale: 'en',
+    sideBySide: true,
+    icons: {
+      up: 'fas fa-chevron-up',
+      down: 'fas fa-chevron-down',
+      previous: 'fas fa-chevron-left',
+      next: 'fas fa-chevron-right'
+    }
+  })
+
+  $('.timepicker').datetimepicker({
+    format: 'HH:mm:ss',
+    icons: {
+      up: 'fas fa-chevron-up',
+      down: 'fas fa-chevron-down',
+      previous: 'fas fa-chevron-left',
+      next: 'fas fa-chevron-right'
+    }
+  })
+
+  $('.time-timepicker').datetimepicker({
+    format: 'HH:mm',
+    stepping: 60,
+    icons: {
+    up: 'fas fa-chevron-up',
+    down: 'fas fa-chevron-down',
+    previous: 'fas fa-chevron-left',
+    next: 'fas fa-chevron-right'
+    }
+  })
+
+  $('.select-all').click(function () {
+    let $select2 = $(this).parent().siblings('.select2')
+    $select2.find('option').prop('selected', 'selected')
+    $select2.trigger('change')
+  })
+  $('.deselect-all').click(function () {
+    let $select2 = $(this).parent().siblings('.select2')
+    $select2.find('option').prop('selected', '')
+    $select2.trigger('change')
+  })
+
+  $('.select2').select2()
+
+  $('.treeview').each(function () {
+    var shouldExpand = false
+    $(this).find('li').each(function () {
+      if ($(this).hasClass('active')) {
+        shouldExpand = true
+      }
+    })
+    if (shouldExpand) {
+      $(this).addClass('active')
+    }
+  })
+})
+</script>
 
 </body>
 </html>

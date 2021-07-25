@@ -12,11 +12,11 @@
 <div class="card">
 <div class="card-header pb-0">
 <div class="d-flex justify-content-between">
-<h4 class="card-title mg-b-0 mb-3">الطاولات الموجودة في المطعم</h4>
+<h4 class="card-title mg-b-0 mb-3"> الأوقات المتاحة </h4>
 <i class="mdi mdi-dots-horizontal text-gray"></i>
 </div>
 <p class="tx-12 tx-gray-500 mb-2">
-<a href="{{route('admin.tables.create')}}"><button class="btn btn-primary mb-3">إضافة طاولة جديدة</button></a></p>
+<a href="{{route('admin.times.create')}}"><button class="btn btn-primary mb-3">إضافة وقت جديد</button></a></p>
 </div>
 <div class="card-body">
 <div class="table-responsive">
@@ -33,9 +33,11 @@
 
 @foreach ($times as $time)
 <tr>
+    <td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->start_time)) !!}</span></td>
+    <td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->end_time)) !!}</span></td>
 
-    <td>{{$time->start_time}}</td>
-    <td>{{$time->end_time}}</td>
+    {{-- <td>{{$time->start_time}}</td>
+    <td>{{$time->end_time}}</td> --}}
 
 {{-- <td>
 <form action="{{route('admin.tables.destroy',[$table->id])}}" method="post">

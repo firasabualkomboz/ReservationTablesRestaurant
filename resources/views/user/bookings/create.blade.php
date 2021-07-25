@@ -52,12 +52,12 @@
 
     <div class="form-group">
     <label for="exampleInputPassword1">الوقت من </label>
-    <input type="datetime-local" name="start_at" class="form-control" >
+    <input type="date" name="start_at" class="form-control" >
     </div>
 
     <div class="form-group">
     <label for="exampleInputPassword1">إلى</label>
-    <input type="datetime-local" name="end_at" class="form-control">
+    <input type="date" name="end_at" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">إحجز طاولة</button>

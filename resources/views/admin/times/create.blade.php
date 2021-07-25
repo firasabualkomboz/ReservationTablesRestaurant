@@ -27,14 +27,14 @@
 
 <div class="form-group">
 <label for="">من </label>
-<input type="time" name="start_time" class="form-control" id="">
+<input type="time" name="start_time" class="form-control time-timepicker" id="">
 </div>
 
 
 <div class="form-group">
-    <label for="">إلى </label>
-    <input type="time" name="end_time" class="form-control" id="">
-    </div>
+<label for="">إلى </label>
+<input type="time" name="end_time" class="form-control time-timepicker" id="">
+</div>
 
 {{--
         <div class="form-group">

@@ -66,7 +66,7 @@
 <option> لا يوجد وقت محدد </option>
 @foreach ($times as $time)
 <option value="{{ $time->id }}">
-{!! date('H' , strtotime($time->start_time)) !!}| {!! date('H' , strtotime($time->end_time)) !!}
+    {!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
 </option>
 @endforeach
 </select>
