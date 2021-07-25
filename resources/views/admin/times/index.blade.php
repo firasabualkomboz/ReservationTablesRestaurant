@@ -33,11 +33,8 @@
 
 @foreach ($times as $time)
 <tr>
-    <td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->start_time)) !!}</span></td>
-    <td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->end_time)) !!}</span></td>
-
-    {{-- <td>{{$time->start_time}}</td>
-    <td>{{$time->end_time}}</td> --}}
+<td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->start_time)) !!}</span></td>
+<td><span class="btn btn-sm btn-outline-info">{!! date('h a'  , strtotime($time->end_time)) !!}</span></td>
 
 {{-- <td>
 <form action="{{route('admin.tables.destroy',[$table->id])}}" method="post">

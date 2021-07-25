@@ -21,71 +21,71 @@
 
 <div class="card-body">
 
-    <div class="form-group">
-    <label for="exampleSelectBorderWidth2">عدد الأشخاص </label>
-    <select name="number_person" value="number_person" class="custom-select form-control-border">
-    @php
-    $max = 21;
-    @endphp
-    @for ($i = 0; $i < $max; $i++)
-    <option  name="number_person"> {{$i}} </option>
-    @endfor
-    </select>
-    </div>
+<div class="form-group">
+<label for="exampleSelectBorderWidth2">عدد الأشخاص </label>
+<select name="number_person" value="number_person" class="custom-select form-control-border">
+@php
+$max = 21;
+@endphp
+@for ($i = 0; $i < $max; $i++)
+<option  name="number_person"> {{$i}} </option>
+@endfor
+</select>
+</div>
 
 
-    <div class="form-group clearfix">
-    <label>نوع الحجز</label>
-    <br>
-    <div class="icheck-primary d-inline">
-    <input name="type" id="inside" value="inside" type="radio">
-    <label for="inside"> داخلي
-    </label>
-    </div>
-    <div class="icheck-primary d-inline">
-    <input name="type" id="outside" value="outside" type="radio">
-    <label for="outside"> خارجي
-    </label>
-    </div>
-    </div>
+<div class="form-group clearfix">
+<label>نوع الحجز</label>
+<br>
+<div class="icheck-primary d-inline">
+<input name="type" id="inside" value="inside" type="radio">
+<label for="inside"> داخلي
+</label>
+</div>
+<div class="icheck-primary d-inline">
+<input name="type" id="outside" value="outside" type="radio">
+<label for="outside"> خارجي
+</label>
+</div>
+</div>
 
 
-    <div class="form-group">
-    <label for="exampleInputPassword1">الوقت من </label>
-    <input type="date" name="start_at" class="form-control" >
-    </div>
+<div class="form-group">
+<label for="exampleInputPassword1">الوقت من </label>
+<input type="date" name="start_at" class="form-control" >
+</div>
 
-    <div class="form-group">
-    <label for="exampleInputPassword1">إلى</label>
-    <input type="date" name="end_at" class="form-control">
-    </div>
+<div class="form-group">
+<label for="exampleInputPassword1">إلى</label>
+<input type="date" name="end_at" class="form-control">
+</div>
 
-    <div class="form-group">
-        <label for="">الوقت المتاح</label>
-        <select name="time_id" class="form-control">
-        <option> لا يوجد وقت محدد </option>
-        @foreach ($times as $time)
-        <option value="{{ $time->id }}">
-            {!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
-        </option>
-        @endforeach
-        </select>
-        </div>
-
-
-    <button type="submit" class="btn btn-primary">إحجز طاولة</button>
+<div class="form-group">
+<label for="">الوقت المتاح</label>
+<select name="time_id" class="form-control">
+<option> لا يوجد وقت محدد </option>
+@foreach ($times as $time)
+<option value="{{ $time->id }}">
+{!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
+</option>
+@endforeach
+</select>
+</div>
 
 
-    </div>
-      </form>
-    </div>
-
-    </div>
-    <!-- /.card -->
+<button type="submit" class="btn btn-primary">إحجز طاولة</button>
 
 
+</div>
+</form>
+</div>
 
-  </div>
+</div>
+<!-- /.card -->
+
+
+
+</div>
 
 
 <div class="col-lg-7 mt-5">

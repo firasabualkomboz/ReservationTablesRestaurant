@@ -49,16 +49,7 @@
 <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
 <!-- JQuery min js -->
 <script src="{{URL::asset('dashboard_files/assets/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap Bundle js -->
-{{-- <script src="{{URL::asset('dashboard_files/assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- Ionicons js -->
-<script src="{{URL::asset('dashboard_files/assets/plugins/ionicons/ionicons.js')}}"></script>
-<!-- Moment js -->
-<script src="{{URL::asset('dashboard_files/assets/plugins/moment/moment.js')}}"></script> --}}
 
-<!-- Rating js-->
-{{-- <script src="{{URL::asset('dashboard_files/assets/plugins/rating/jquery.rating-stars.js')}}"></script>
-<script src="{{URL::asset('dashboard_files/assets/plugins/rating/jquery.barrating.js')}}"></script> --}}
 
 <!--Internal  Perfect-scrollbar js -->
 <script src="{{URL::asset('dashboard_files/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>

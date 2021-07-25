@@ -8,7 +8,6 @@
 <div class="card card-primary">
 <div class="card-header">
 <h3 class="card-title">إضافة طاولة جديدة</h3>
-{{-- check error --}}
 @if ($errors->any())
 <div class="alert alert-danger">
 <ul>
@@ -18,7 +17,6 @@
 </ul>
 </div>
 @endif
-{{-- end check --}}
 <form method="post" action="{{route('admin.tables.store')}}">
 @csrf
 
@@ -66,74 +64,24 @@
 <option> لا يوجد وقت محدد </option>
 @foreach ($times as $time)
 <option value="{{ $time->id }}">
-    {!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
+{!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
 </option>
 @endforeach
 </select>
 </div>
 
 
+</div>
 
-{{-- <div class="form-group">
-<label for="exampleInputPassword1">Form TO | Date & Time</label>
-<input type="text" name="datetimes" class="form-control" id="exampleInputPassword1" placeholder="Password">
-</div> --}}
+<div class="card-footer">
+<button type="submit" class="btn btn-primary">إضافة</button>
+</div>
+</form>
+</div>
 
-        </div>
-        <!-- /.card-body -->
+</div>
 
-        <div class="card-footer">
-          <button type="submit" class="btn btn-primary">إضافة</button>
-        </div>
-      </form>
-    </div>
+</div>
 
-    </div>
-    <!-- /.card -->
-
-
-
-  </div>
-
-                                {{-- <form  method="POST" action="{{route('table.store')}}">
-                                @csrf
-                                <div class="form-group">
-                                <label>رقم الطاولة</label>
-                                <input name="number_table" type="number" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                <label>عدد الأشخاص</label>
-                                <input name="number_person" class="form-control" type="number">
-                                </div>
-
-                                <div class="form-group">
-                                <label>نوع الطاولة</label>
-                                <label class="radio-inline">
-                                <input type="radio" name="type" value="outside"> خ
-                                </label>
-                                <label class="radio-inline">
-                                <input type="radio" name="type" value="inside" >د
-                                </label>
-                                </div>
-
-                                <div class="form-group">
-                                <label> التاريخ المتاح</label>
-                                <p>من</p>
-                                <input type="date" name="start_date" class="form-control datetime">
-
-                                <p>إلى</p>
-                                <input type="date" name="end_date" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>الوقت المتاح</label>
-                                    <p>من</p>
-                                    <input type="time" step="0" name="start_time" class="form-control">
-                                    <p>إلى</p>
-                                    <input type="time" name="end_time" class="form-control">
-                                    </div>
-
-                                    <button type="submit" class="btn btn-success">اضافة</button>
-                                    </form> --}}
 
 @endsection
