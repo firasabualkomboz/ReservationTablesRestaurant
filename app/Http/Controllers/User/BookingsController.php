@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Table;
+use App\Models\Time;
 use Carbon\Carbon;
 use Facade\Ignition\Tabs\Tab;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class BookingsController extends Controller
 
         $tables = null;
         $table = Table::all();
+        $times = Time::all();
 
         if ($request->filled(['number_person','type','start_at','end_at'])) {
 
@@ -45,7 +47,7 @@ class BookingsController extends Controller
 
         }
 
-        return view('user.bookings.create', compact('tables','table'));
+        return view('user.bookings.create', compact('tables','table','times'));
 
     }
 

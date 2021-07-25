@@ -60,6 +60,19 @@
     <input type="date" name="end_at" class="form-control">
     </div>
 
+    <div class="form-group">
+        <label for="">الوقت المتاح</label>
+        <select name="time_id" class="form-control">
+        <option> لا يوجد وقت محدد </option>
+        @foreach ($times as $time)
+        <option value="{{ $time->id }}">
+            {!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
+        </option>
+        @endforeach
+        </select>
+        </div>
+
+
     <button type="submit" class="btn btn-primary">إحجز طاولة</button>
 
 
@@ -93,6 +106,7 @@
 <th>النوع</th>
 <th>من</th>
 <th>إلى</th>
+<th>الوقت المتاح</th>
 <th>أكشن</th>
 </tr>
 </thead>
@@ -104,6 +118,7 @@
 {{-- <td>{{$table->start_at ?? ''}}</td> --}}
 <td>{!! date('d-m-Y'  , strtotime($table->start_at)) !!}</td>
 <td>{!! date('d-m-Y'  , strtotime($table->end_at)) !!}</td>
+<td>{!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}</td>
 
 {{-- <td>{{$table->end_at ?? ''}}</td> --}}
 {{--  {{route('booking.choice',[$table->id])}} --}}

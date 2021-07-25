@@ -30,8 +30,7 @@
         <th >نوع الحجز</th>
         <th>من تاريخ</th>
         <th>إلى تاريخ</th>
-        <th>من ساعة</th>
-        <th>إلى ساعة</th>
+        <th>الوقت</th>
         <th>اكشن</th>
         </tr>
         </thead>
@@ -46,8 +45,8 @@
         <td>{{$booking->table->type}}</td>
         <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->start_at)) !!}</span></td>
         <td> <span class="btn btn-outline-primary"> {!! date('d-m-Y', strtotime($booking->table->end_at)) !!}</span></td>
-        <td><span class="btn btn-sm btn-outline-info">{!! date('H'  , strtotime($booking->table->start_at)) !!}</span></td>
-        <td><span class="btn btn-sm btn-outline-info">{!! date('H'  , strtotime($booking->table->end_at)) !!}</span></td>
+        <td>{!! date('h a'  , strtotime($booking->table->start_time)) !!} <br> {!! date('h a'  , strtotime($booking->table->end_time)) !!} </td>
+
         <td>
             <form action="{{route('admin.booking.destroy',[$booking->id])}}" method="post">
             @csrf
