@@ -26,6 +26,11 @@ class BookingsController extends Controller
         $table = Table::all();
         $times = Time::all();
 
+        $book_date  = Table::where('start_at','<=',Carbon::now())
+        ->where('end_at','>=',Carbon::now())
+        ->get('start_at');
+
+
         if ($request->filled(['number_person','type','start_at','end_at'])) {
 
         $dates = [
@@ -34,6 +39,8 @@ class BookingsController extends Controller
         Carbon::parse($request->input('end_at')),
 
         ];
+
+
 
         $tables = Table::where('number_person', '<=', $request->input('number_person'))
         ->where('type' , '=' ,$request->input('type'))
@@ -47,7 +54,7 @@ class BookingsController extends Controller
 
         }
 
-        return view('user.bookings.create', compact('tables','table','times'));
+        return view('user.bookings.create', compact('tables','table','times','book_date'));
 
     }
 

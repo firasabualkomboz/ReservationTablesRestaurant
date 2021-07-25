@@ -17,6 +17,7 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
+            $table->date('date');
             $table->foreignId('table_id')->nullable()->constrained('tables','id')->nullOnDelete();
             $table->timestamps();
         });

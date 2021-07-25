@@ -72,7 +72,6 @@ $max = 21;
 </select>
 </div>
 
-
 <button type="submit" class="btn btn-primary">إحجز طاولة</button>
 
 
@@ -106,7 +105,7 @@ $max = 21;
 <th>النوع</th>
 <th>من</th>
 <th>إلى</th>
-<th>الوقت المتاح</th>
+<th>الوقت </th>
 <th>أكشن</th>
 </tr>
 </thead>
