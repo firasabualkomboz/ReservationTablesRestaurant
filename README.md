@@ -2,8 +2,8 @@
 
 ### - Administrator's Permissions in ( Dashboard Admin ) :
 
-#### :arrow_right: Add a Table through https://localhost/admin/table/create 
-#### :arrow_right: Add a Time through https://localhost/admin/time/create 
+#### :arrow_right: Add a Table through :link: https://localhost/admin/table/create 
+#### :arrow_right: Add a Time through  :link: https://localhost/admin/time/create 
 
 
 ### - How to reserve a table for the customer ?
