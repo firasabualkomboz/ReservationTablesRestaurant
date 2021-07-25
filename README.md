@@ -8,7 +8,7 @@
 
 ### - How to reserve a table for the customer ?
 
-#### 1- Find a table in terms of time, date, etc through https:://localhost/booking.
+#### 1- Find a table in terms of time, date, etc through https://localhost/booking.
 
 ##### Now you have filtered the tables in the restaurant, you can now click on reservation and complete your order by adding the date, name and contact number to save the reservation , Follow the last link :
 
