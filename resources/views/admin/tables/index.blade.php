@@ -45,7 +45,7 @@
 <form action="{{route('admin.tables.destroy',[$table->id])}}" method="post">
 @csrf
 @method('delete')
-<button type="submit" class="btn btn-sm btn-outline-danger">حذف</button>
+<button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
 </form>
 </td>
 
