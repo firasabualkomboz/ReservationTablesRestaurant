@@ -23,7 +23,8 @@ class TablesController extends Controller
     public function create()
     {
         $times = Time::all();
-        return view('admin.tables.create',compact('times'));
+        $table_booking_number = Table::select('number_table')->get();
+        return view('admin.tables.create',compact('times','table_booking_number'));
     }
 
 
