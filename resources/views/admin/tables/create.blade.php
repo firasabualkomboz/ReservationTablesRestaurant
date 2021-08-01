@@ -64,12 +64,12 @@
 <option> لا يوجد وقت محدد </option>
 @foreach ($times as $time)
 <option value="{{ $time->id }}">
-{!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
+    <li> من الساعة {!! date('h a'  , strtotime($time->start_time)) !!}
+        <br> إلى الساعة {!! date('h a'  , strtotime($time->end_time)) !!}
 </option>
 @endforeach
 </select>
 </div>
-
 
 </div>
 

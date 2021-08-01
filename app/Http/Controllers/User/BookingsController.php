@@ -54,7 +54,20 @@ class BookingsController extends Controller
 
         }
 
-        return view('user.bookings.create', compact('tables','table','times','book_date'));
+        // $start = '2021-07-01';
+        // $end = '2021-07-20';
+        // $users = Table::select("tables.*")
+
+        // ->whereBetween('start_at', [$start, $end])
+
+        // ->get();
+        // dd($tables);
+
+
+        $select_date = Table::whereDate('start_at','<=', date("07-01-2021"))
+        ->whereDate('end_at','>=', date("08-30-2021"))->get();
+
+        return view('user.bookings.create', compact('tables','table','times','book_date','select_date'));
 
     }
 

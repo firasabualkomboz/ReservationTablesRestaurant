@@ -6,6 +6,8 @@
 <div class="card card-primary">
 <div class="card-header">
 <h3 class="card-title">احجز طاولة الأن في تيك شيف</h3>
+
+
 {{-- check error --}}
 @if ($errors->any())
 <div class="alert alert-danger">
@@ -51,12 +53,12 @@ $max = 21;
 
 
 <div class="form-group">
-<label for="exampleInputPassword1">الوقت من </label>
+<label>الوقت من </label>
 <input type="date" name="start_at" class="form-control" >
 </div>
 
 <div class="form-group">
-<label for="exampleInputPassword1">إلى</label>
+<label>إلى</label>
 <input type="date" name="end_at" class="form-control">
 </div>
 
