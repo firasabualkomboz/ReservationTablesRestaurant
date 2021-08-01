@@ -7,7 +7,6 @@ use App\Models\Booking;
 use App\Models\Table;
 use App\Models\Time;
 use Carbon\Carbon;
-use Facade\Ignition\Tabs\Tab;
 use Illuminate\Http\Request;
 
 class BookingsController extends Controller
@@ -39,8 +38,6 @@ class BookingsController extends Controller
         Carbon::parse($request->input('end_at')),
 
         ];
-
-
 
         $tables = Table::where('number_person', '<=', $request->input('number_person'))
         ->where('type' , '=' ,$request->input('type'))

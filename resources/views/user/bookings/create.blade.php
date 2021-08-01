@@ -24,7 +24,7 @@
 <div class="card-body">
 
 <div class="form-group">
-<label for="exampleSelectBorderWidth2">عدد الأشخاص </label>
+<label>عدد الأشخاص </label>
 <select name="number_person" value="number_person" class="custom-select form-control-border">
 @php
 $max = 21;
@@ -54,7 +54,7 @@ $max = 21;
 
 <div class="form-group">
 <label>الوقت من </label>
-<input type="date" name="start_at" class="form-control" >
+<input id="date" type="date" name="start_at" class="form-control date" >
 </div>
 
 <div class="form-group">
@@ -68,8 +68,8 @@ $max = 21;
 <option> لا يوجد وقت محدد </option>
 @foreach ($times as $time)
 <option value="{{ $time->id }}">
-{!! date('h a'  , strtotime($time->start_time)) !!} <br> {!! date('h a'  , strtotime($time->end_time)) !!}
-</option>
+<li> من الساعة  {!! date('h a'  , strtotime($time->start_time)) !!}
+<br> إلى الساعة {!! date('h a'  , strtotime($time->end_time))   !!}</option>
 @endforeach
 </select>
 </div>
@@ -140,4 +140,5 @@ $max = 21;
 </div>
 </div>
 </div>
+
 @endsection

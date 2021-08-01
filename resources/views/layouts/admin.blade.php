@@ -378,17 +378,6 @@
 <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
 <!-- JQuery min js -->
 <script src="{{URL::asset('dashboard_files/assets/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap Bundle js -->
-{{-- <script src="{{URL::asset('dashboard_files/assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- Ionicons js -->
-<script src="{{URL::asset('dashboard_files/assets/plugins/ionicons/ionicons.js')}}"></script>
-<!-- Moment js -->
-<script src="{{URL::asset('dashboard_files/assets/plugins/moment/moment.js')}}"></script> --}}
-
-<!-- Rating js-->
-{{-- <script src="{{URL::asset('dashboard_files/assets/plugins/rating/jquery.rating-stars.js')}}"></script>
-<script src="{{URL::asset('dashboard_files/assets/plugins/rating/jquery.barrating.js')}}"></script> --}}
-
 <!--Internal  Perfect-scrollbar js -->
 <script src="{{URL::asset('dashboard_files/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <script src="{{URL::asset('dashboard_files/assets/plugins/perfect-scrollbar/p-scroll.js')}}"></script>
@@ -416,13 +405,13 @@
 <script src="https://unpkg.com/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+{{-- <script src="//cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
 <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
 <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script> --}}
 <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
@@ -430,6 +419,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
 
 <script>
     $(document).ready(function () {
@@ -442,11 +432,12 @@
   $('.date').datetimepicker({
     format: 'YYYY-MM-DD',
     locale: 'en',
+    minDate:new Date()
     icons: {
-      up: 'fas fa-chevron-up',
-      down: 'fas fa-chevron-down',
-      previous: 'fas fa-chevron-left',
-      next: 'fas fa-chevron-right'
+    up: 'fas fa-chevron-up',
+    down: 'fas fa-chevron-down',
+    previous: 'fas fa-chevron-left',
+    next: 'fas fa-chevron-right'
     }
   })
 
@@ -508,6 +499,12 @@
     }
   })
 })
+
+
+
+
+
+
 </script>
 
 </body>
