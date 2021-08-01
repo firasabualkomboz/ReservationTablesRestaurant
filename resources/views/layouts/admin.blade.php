@@ -432,6 +432,7 @@
   $('.date').datetimepicker({
     format: 'YYYY-MM-DD',
     locale: 'en',
+    startDate: yesterday,
     minDate:new Date()
     icons: {
     up: 'fas fa-chevron-up',

@@ -51,15 +51,14 @@ $max = 21;
 </div>
 </div>
 
-
 <div class="form-group">
 <label>الوقت من </label>
-<input id="date" type="date" name="start_at" class="form-control date" >
+<input id="datepicker" type="text" name="start_at" class="form-control datepicker" >
 </div>
 
 <div class="form-group">
 <label>إلى</label>
-<input type="date" name="end_at" class="form-control">
+<input type="text" name="end_at" class="form-control datepicker">
 </div>
 
 <div class="form-group">

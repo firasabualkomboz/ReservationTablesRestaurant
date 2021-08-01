@@ -9,12 +9,8 @@ use App\Http\Controllers\user\ContactController;
 
 // Route::get('/','App\Http\Controllers\BookingController@index')->name('booking');
 // Route::post('/','App\Http\Controllers\BookingController@store')->name('booking.store');
-
-
 // Route::get('/admin/booking/fillter','App\Http\Controllers\Admin\BookingsController@filltertable')->name('fillter');
-
 // Route::get('/admin/booking/fillter/choice/{id}','App\Http\Controllers\Admin\BookingsController@choice')->name('booking.choice');
-
 // Route::post('/admin/booking/store/','App\Http\Controllers\Admin\BookingsController@booking')->name('booking.store');
 
 
