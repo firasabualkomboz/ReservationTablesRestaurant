@@ -15,16 +15,13 @@
 @endif
 {{-- end check --}}
 
-
-
-
 <div class="col-lg-12">
 
    <div class="king-table mt-5 mb-5">
     <h2 class="mb-4">طاولات ملوكية ( خدمات عالية )</h2>
     <div class="row">
 
-{{-- 
+{{--
 @foreach ($kings as $king_table)
 <div class="col-lg-3 mt-3 mb-3">
     <div class="body">

@@ -51,15 +51,6 @@ class BookingsController extends Controller
 
         }
 
-        // $start = '2021-07-01';
-        // $end = '2021-07-20';
-        // $users = Table::select("tables.*")
-
-        // ->whereBetween('start_at', [$start, $end])
-
-        // ->get();
-        // dd($tables);
-
 
         $select_date = Table::whereDate('start_at','<=', date("07-01-2021"))
         ->whereDate('end_at','>=', date("08-30-2021"))->get();
@@ -79,16 +70,6 @@ class BookingsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
 
      public function store(Request $request)
 
@@ -148,35 +129,19 @@ class BookingsController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

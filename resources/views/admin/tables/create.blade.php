@@ -25,16 +25,17 @@
 <div class="form-group">
 <label >رقم الطاولة</label>
 <input type="number" name="number_table" placeholder="رقم الطاولة من 1 إلى 50" class="form-control">
-<div class="mt-3 mb-3" style="padding:10px;pointer-events: none; opacity: 0.4;
-">
-<h6>ارقام طاولات محجوزة</h6>
-<ol class="list-unstyled" style="padding: 0">
-@foreach ($table_booking_number as $item)
-<li style="display: inline"><span class="btn btn-outline-dark btn-sm">{{$item->number_table}}</span></li>
-@endforeach
-</ol>
 </div>
-</div>
+{{--<div class="mt-3 mb-3" style="padding:10px;pointer-events: none; opacity: 0.4;--}}
+{{--">--}}
+{{--<h6>ارقام طاولات محجوزة</h6>--}}
+{{--<ol class="list-unstyled" style="padding: 0">--}}
+{{--@foreach ($table_booking_number as $item)--}}
+{{--<li style="display: inline"><span class="btn btn-outline-dark btn-sm">{{$item->number_table}}</span></li>--}}
+{{--@endforeach--}}
+{{--</ol>--}}
+{{--</div>--}}
+
 
 <div class="form-group">
 <label >عدد الأشخاص</label>
@@ -59,7 +60,7 @@
 
 <div class="form-group">
 <label for="exampleInputPassword1">من</label>
-<input max="2018" type="date" name="start_at" class="form-control" >
+<input max="2018" id="datepicker" type="date" name="start_at" class="form-control" >
 </div>
 <div class="form-group">
 <label for="exampleInputPassword1">إلى</label>

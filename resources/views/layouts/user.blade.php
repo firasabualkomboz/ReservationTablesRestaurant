@@ -39,12 +39,12 @@
     </div>
     </div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        $('.datepicker').datepicker({
-            startDate: new Date()
-        });
-        </script>
+$('.datepicker').datepicker({
+startDate: new Date()
+});
+</script>
 
 
 <!-- JQuery min js -->

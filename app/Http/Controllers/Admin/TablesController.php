@@ -32,20 +32,6 @@ class TablesController extends Controller
 
     {
 
-
-        // $validated = $request->validate([
-        //     'number_table'          =>'required|int|max:50',
-        //     'number_person'         =>'required|int',
-        //     'type'                  =>'required|in:inside,outside',
-        // ]);
-
-
-        // $customMessages = [
-        //     'max'    => 'رقم الطاولة يجب ان يكوم أقل من 50.',
-        // ];
-
-
-
         $table = new Table;
         $table->number_table        = $request->input('number_table');
         $table->number_person       = $request->input('number_person');
@@ -53,13 +39,9 @@ class TablesController extends Controller
         $table->start_at            = $request->input('start_at');
         $table->end_at              = $request->input('end_at');
         $table->time_id             = $request->input('time_id');
-
         $table->save();
 
-
         return redirect()->route('admin.tables')->with('success','تم إضافة الطاولة بنجاح');
-
-
 
     }
 
