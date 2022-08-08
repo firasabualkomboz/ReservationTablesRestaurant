@@ -72,8 +72,6 @@ class TablesController extends Controller
         return redirect()->route('admin.tables')
         ->with('success','تم حذف الطاولة بنجاح');
 
-
-
     } //end destroy
 
 
